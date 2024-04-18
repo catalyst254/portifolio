@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Education background</title>
+</head>
+<style>
+    body {
+        background-color: #000000; 
+       
+    }
+
+     header {
+        background-color: #15fa00;
+        color: white;
+        font-family: 'Times New Roman', Times, serif;
+        font-weight: bold;
+        padding: 20px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        z-index: 9999;
+        position: fixed;
+        top: 0;
+        width: 100%;
+    }
+
+    .profile {
+        border-radius: 50%;
+        width: 60px;
+        height: 60px;
+        margin-right: 10px;
+    }
+
+    h1 {
+        margin: 0;
+        text-align: center;
+        font-size: 24px;
+        font-family: 'Times New Roman', Times, serif;
+    }
+
+    nav {
+        padding: 10px;
+        text-align: left;
+    }
+
+    nav ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+    }
+
+    nav ul li {
+        display: inline;
+        margin-right: 10px;
+        position: relative;
+    }
+
+    nav ul li a {
+        color: white;
+        text-decoration: none;
+        position: relative;
+    }
+
+    nav ul li a::after {
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: 2px;
+        bottom: -5px;
+        left: 0;
+        background-color: transparent;
+        transition: background-color 0.3s ease;
+    }
+
+    nav ul li a:hover::after {
+        background-color: #080e03;
+    }
+
+    section{
+        color: #ffffff;
+    }
+    .my {
+        padding: 20px;
+        margin-top: 90px;
+        color: #ffffff;
+        text-align: center;
+    }
+    .education h2{
+        color: #ff0000;
+        margin-left: 100px;
+    }
+    .degree {
+            position: relative;
+            width: 300px;
+            height: auto;
+            padding: 20px;
+            background-color: #15fa00;
+            color: rgb(3, 3, 3);
+            font-family: 'Times New Roman', Times, serif;
+            font-weight: bold;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .degree::before,
+        .degree::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            width: 100%;
+            height: 4px;
+            background-color:  red;
+            animation: runLine 2s linear infinite;
+        }
+
+        .degree::before {
+            left: -100%;
+        }
+
+        .degree::after {
+            right: -100%;
+        }
+
+        @keyframes runLine {
+            0% {
+                transform: translateX(-100%);
+            }
+            100% {
+                transform: translateX(100%);
+            }
+        }
+    .degree:hover{
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+        transform: translateY(-5px);
+    }
+
+</style>
+<body>
+    <header>
+        <img class="profile" src="profile.png.jpg" alt="Profile Picture">
+        <h1>BriGiSoftech</h1>
+        <nav>
+            <ul>
+                <li><a href="page.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="#">Services</a></li>
+                <li><a href="#">Education</a></li>
+                <li><a href="skills.html">Skills</a></li>
+                <li><a href="#">Portfolio</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+            <h1 class="my">My Journey</h1>
+    <section>
+        <!-- home section left design-->
+        <div class="my-journey">
+            <div class="education">
+                <h2>Education</h2>
+                <div class="degree">
+                    <h3>Mama Ngina University - Degree</h3>
+                    <h5>2018 - 2022</h5>
+                    <p>Joined MNU with focus on Mathematics and Computer Science. And am acquiring Solid Foundation on Programming Languages and problem solving.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section>
+       <!-- home section right design--> 
+       <div class="my-journey">
+        <div class="experiance">
+            <h2> Experience</h2>
+            <div class="exposure">
+                 
+            </div>
+        </div>
+       </div>
+    </section>
+</body>
+</html>

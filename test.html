@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animated Border</title>
+    <style>
+        body, html {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            width: 100%;
+            height: 100%;
+            position: relative;
+        }
+
+        .rotating-line {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border-top: 2px solid #333; /* Border for top side */
+            border-right: 2px solid transparent; /* Border for right side */
+            border-bottom: 2px solid transparent; /* Border for bottom side */
+            border-left: 2px solid transparent; /* Border for left side */
+            animation: rotate 2s linear infinite; /* Animation for rotation */
+            box-sizing: border-box;
+        }
+
+        @keyframes rotate {
+            0% {
+                transform: rotate(0deg); /* Rotate from 0 degrees */
+            }
+            100% {
+                transform: rotate(360deg); /* Rotate to 360 degrees */
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="rotating-line"></div>
+    </div>
+</body>
+</html>
