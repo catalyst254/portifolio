@@ -154,20 +154,26 @@
         background-color: #32fc00;
         color: white;
     }
-    button {
+    .btn {
         background-color: #1dfc00;
-        border-radius: 20px;
-        letter-spacing: 0.1rem;
-        font-size: 20px;
+        border-radius: 10px;
         font-family: monospace, serif;
         font-weight: bolder;
-        height: 40px;
         border: none;
         margin-top: 20px;
+        width: 100px;
+        height: 20px;
     }
-    button a {
+    .btn a {
         text-decoration: none;
-        color: rgb(253, 253, 253);
+        color: rgb(0, 0, 0);
+    }
+    .btn a:hover {
+        box-shadow: 5px 5px 5px #f9f9ff;
+        transition: 0.5s ease;
+        background-color: #32fc00;
+        border-radius: 10px;
+        color: white;
     }
     .proffessions-box {
         width: 400px; 
@@ -264,7 +270,8 @@
     height: 400px;
     overflow: hidden;
     pointer-events: none;
-    margin-bottom: 100px;
+    margin-bottom: 150px;
+    margin-right: 0px;
 }
 
 
@@ -277,12 +284,11 @@
         <nav>
             <ul>
                 <li><a href="#">Home</a></li>
-                <li><a href="about.html">About</a></li>
+                <li><a href="about.html">About me</a></li>
                 <li><a href="#">Services</a></li>
                 <li><a href="education.html">Education</a></li>
                 <li><a href="skills.html">Skills</a></li>
-                <li><a href="#">Portfolio</a></li>
-                <li><a href="#">Contact</a></li>
+                <li><a href="#">Contact me</a></li>
             </ul>
         </nav>
     </header>
@@ -301,7 +307,7 @@
                 <a href="https://wa.me/+254704234834" target="_blank"><i class="fab fa-whatsapp"></i> </a><br>
             </div>
             <div class="btn">
-            <button><a href="#">Download CV</a></button>
+            <a href="cv.html">Download CV</a>
         </div>
         </div>
         <!-- home section right design-->

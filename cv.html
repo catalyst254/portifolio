@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My CV</title>
+</head>
+<style>
+    header {
+        background-color: #15fa00;
+        color: white;
+        font-family: 'Times New Roman', Times, serif;
+        font-weight: bold;
+        padding: 20px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        z-index: 1;
+        position: relative;
+    }
+
+    .profile {
+        border-radius: 50%;
+        width: 60px;
+        height: 60px;
+        margin-right: 10px;
+    }
+
+    h1 {
+        margin: 0;
+        font-size: 24px;
+        font-family: 'Times New Roman', Times, serif;
+    }
+
+    nav {
+        padding: 10px;
+        text-align: left;
+    }
+
+    nav ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+    }
+
+    nav ul li {
+        display: inline;
+        margin-right: 10px;
+        position: relative;
+    }
+
+    nav ul li a {
+        color: white;
+        text-decoration: none;
+        position: relative;
+    }
+
+    nav ul li a::after {
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: 2px;
+        bottom: -5px;
+        left: 0;
+        background-color: transparent;
+        transition: background-color 0.3s ease;
+    }
+
+    nav ul li a:hover::after {
+        background-color: #080e03;
+        color: red;
+    }
+
+    h1 {
+        font-size: 40px;
+        text-align: center;
+    }
+
+    /* Horizontal line */
+    .horizontal-line {
+        width: 100%;
+        height: 5px;
+        background-color: #15fa00;
+        margin:  0;
+    }
+
+    /* Vertical line */
+    .vertical-line {
+        width: 5px;
+        height: 100%;
+        background-color: #15fa00;
+        position: absolute;
+        top: 160px;
+        bottom: 0;
+        left: 35%;
+        transform: translateX(-50%);
+    }
+
+
+    section {
+        margin-bottom: 30px;
+    }
+
+    .underline {
+        font-size: 24px;
+        margin-bottom: 10px;
+        font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        font-weight: bolder;
+        border-bottom: 3px solid black; 
+        padding-bottom: 1px; 
+    }
+
+    ul {
+        list-style-type: none;
+        padding-left: 0;
+    }
+
+    li {
+        margin-bottom: 10px;
+    }
+    .left-side{
+        float: left;
+        margin-left: 0;
+        width: 35%;
+        background-color: rgb(29, 247, 0);
+        border-radius: 10px;
+    }
+    .right-side{
+        float: right;
+        text-align: center;
+        align-items: center;
+        width: 65%;
+        background-color: ;
+    }
+</style>
+<body>
+    <header>
+        <img class="profile" src="profile.png.jpg" alt="Profile Picture">
+        <h1>Portfolio</h1>
+        <nav>
+            <ul>
+                <li><a href="page.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="#">Services</a></li>
+                <li><a href="education.html">Education</a></li>
+                <li><a href="skills.html">Skills</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <body>
+        <h1>My CV</h1>
+        <div class="horizontal-line"></div>
+        <div class="vertical-line"></div>
+    <div class="left-side">
+        <section>
+            <h2 class="underline">Contact </h2>
+            <ul>
+                <li><strong>Name:</strong><br> Murithi BrianPaul gitonga</li>
+                <li><strong>Email:</strong><br> brianpaulgito@gmail.com</li>
+                <li><strong>Phone:</strong><br> 0110848885</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2 class="underline">Personal Details</h2>
+            <ul>
+                <li><strong> Date of Birth:</strong> 1999-01-01</li>
+                <li><strong>Gender:</strong> Male</li>
+                <li><strong>Marital Status:</strong>  single</li>
+                <li><strong>Nationality:</strong> Kenyan</li>
+                <li><strong>Religion:</strong> christian</li>
+            </ul>
+        </section>
+        <section>
+            <h2 class="underline">Languages</h2>
+            <ul>
+                <li><strong>English</strong><br> </li>
+                <li><strong>Kiswahili</strong><br> </li>
+            </ul>
+        </section>
+        <section>
+            <h2 class="underline">Education</h2>
+            <ul>
+                <li><strong>2023 - date</strong><br> </li>
+                <li><strong>Mama Ngina University</strong><br> </li>
+                <li><strong>Bachelor of Science (Mathematics and Computer Science)</strong><br> </li>
+                <li><strong>expectations</strong><br>I aim to excel in problem-solving and innovation, driving impactful advancements in technology.
+                </li>
+            </ul>
+            <ul>
+                <li><strong>2019 - 2022 </strong></li>
+                <li><strong>S't Thomas Aquinas Igumori</strong></li>
+                <li><strong>Kenya Certificate of Secondary Education</strong></li>
+                <li>Attended St Thomas Aquinas Igumori High School where I excelled in various subjects.</li>
+
+            </ul>
+            <ul>
+                <li><strong>2008 - 2018 (Primary)</strong></li>
+                <li><strong>Sevenforks Primary school</strong></li>
+            </ul>
+        </section>
+    </div>
+    <!-- /.right side -->
+    <div class="right-side">
+        <section>
+            <h2 >Personal statement</h2>
+           <p>My passion for technology, coupled with my problem-solving skills and dedication to continuous learning, drives my pursuit to innovate and contribute meaningfully to the ever-evolving field of computer science.</p>
+        </section>
+        
+         <section>
+            <h2 >Experience</h2>
+            <ul>
+                <li><strong>2020 - 2023</strong><br> </li>
+                <li><strong>Mama Ngina University</strong><br> </li>
+                <li><strong>Bachelor of Science (Mathematics and Computer Science)</strong><br> </li>
+                <li><strong>expectations</strong><br>I aim to excel in problem-solving and innovation, driving impactful advancements in technology.
+                </li>
+            </ul>
+         </section>
+
+        </div>
+    </body>
+</html>
