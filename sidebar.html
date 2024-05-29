@@ -3,251 +3,409 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Side Navigation menu</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <link rel="stylesheet" href="./css/style.css">
+    <title>Brian Paul Gitonga</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <style>
+        body {
+            background-color: #000000;
+            background-image: linear-gradient(to bottom left, #15fa00 40.5%, transparent 20.5%, transparent), 
+                              linear-gradient(to top left, #15fa00 40.5%, transparent 20.5%, transparent);
+            background-size: 50% 50%;
+            background-position: top left, bottom right;
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            height: 100vh;
+            position: relative;
+            overflow: hidden;
+        }
+
+        header {
+            background-color: #15fa00;
+            color: white;
+            font-family: 'Times New Roman', Times, serif;
+            font-weight: bold;
+            padding: 10px 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            z-index: 1;
+            position: relative;
+        }
+
+        h1 {
+            margin: 0;
+            font-size: 18px;
+            font-family: 'Times New Roman', Times, serif;
+        }
+
+        .menu-icon {
+            display: none;
+            font-size: 24px;
+            cursor: pointer;
+        }
+
+        nav {
+            display: flex;
+        }
+
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+        }
+
+        nav ul li {
+            margin-right: 10px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            position: relative;
+            padding: 5px;
+        }
+
+        nav ul li a:hover::after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 2px;
+            bottom: -5px;
+            left: 0;
+            background-color: #080e03;
+            transition: background-color 0.3s ease;
+        }
+
+        .dropdown {
+            display: none;
+            flex-direction: column;
+            position: absolute;
+            top: 60px;
+            right: 20px;
+            background-color: #15fa00;
+            border-radius: 5px;
+            padding: 10px;
+            z-index: 10;
+        }
+
+        .dropdown ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .dropdown ul li {
+            margin: 10px 0;
+        }
+
+        .dropdown ul li a {
+            color: white;
+            text-decoration: none;
+            padding: 5px;
+        }
+
+        .dropdown ul li a:hover {
+            color: #080e03;
+        }
+
+        .dropdown.show {
+            display: flex;
+        }
+
+        @media (max-width: 768px) {
+            .menu-icon {
+                display: block;
+            }
+
+            nav {
+                display: none;
+            }
+
+            .dropdown.show {
+                display: flex;
+            }
+
+            .home {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+            }
+
+            .home-content h3 {
+                font-size: 1.2rem;
+            }
+
+            .home-content h2 {
+                font-size: 1.5rem;
+            }
+
+            .home-content p {
+                font-size: 0.9rem;
+            }
+
+            .proffessions-box {
+                width: 200px;
+                height: 200px;
+            }
+
+            .circle {
+                height: 200px;
+                width: 200px;
+            }
+
+            .home-img img {
+                width: 250px;
+                height: 250px;
+                margin: 0;
+            }
+        }
+
+        p {
+            color: white;
+            text-align: left;
+            margin-top: 50px;
+        }
+
+        .home {
+            display: flex;
+            flex-direction: row;
+            align-items: flex-start;
+            justify-content: space-around;
+            padding: 20px;
+            z-index: 999;
+        }
+
+        .home-content {
+            display: inline-flex;
+            flex-direction: column;
+            text-align: left;
+            padding: 20px;
+            color: #f5eeee;
+        }
+
+        .home-content h3 {
+            font-size: 2.2rem;
+            font-weight: 700;
+            line-height: 0.8em;
+            margin: 0 0 0.5rem 0;
+        }
+
+        section {
+            min-height: 100vh;
+            padding: 10rem 7% 2rem;
+        }
+
+        .home-content h3 {
+            font-size: 2.2rem;
+            font-weight: 700;
+            line-height: 1em;
+            margin: 0.5rem 0;
+        }
+
+        .home-content p {
+            font-size: 1.2rem;
+            line-height: 1.3em;
+            margin-top: 1rem;
+        }
+
+        .social-media a {
+            display: inline-flex;
+            text-decoration: none;
+            align-items: center;
+            justify-content: center;
+            width: 2rem;
+            height: 2rem;
+            background-color: transparent;
+            border-radius: 50%;
+            box-shadow: 5px 5px 5px black;
+            margin: 0.5rem 0.5rem 1rem 2;
+            font-size: 1.5rem;
+            color: rgb(78, 247, 0);
+        }
+
+        .social-media a:hover {
+            box-shadow: 5px 5px 5px #f9f9ff;
+            transition: 0.5s ease;
+            background-color: #32fc00;
+            color: white;
+        }
+
+        .btn {
+            background-color: #1dfc00;
+            border-radius: 10px;
+            font-family: monospace, serif;
+            font-weight: bolder;
+            border: none;
+            margin-top: 20px;
+            width: 120px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .btn a {
+            text-decoration: none;
+            color: rgb(0, 0, 0);
+        }
+
+        .btn a:hover {
+            box-shadow: 5px 5px 5px #f9f9ff;
+            transition: 0.5s ease;
+            background-color: #32fc00;
+            border-radius: 10px;
+            color: white;
+        }
+
+        .proffessions-box {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            position: relative;
+            display: flex;
+            margin-right: 60px;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            animation: rotate 12s ease-in-out infinite;
+        }
+
+        @keyframes rotate {
+            0%, 100% {
+                transform: rotate(0deg);
+            }
+            25%, 45% {
+                transform: rotate(90deg);
+            }
+            50%, 70% {
+                transform: rotate(180deg);
+            }
+            75%, 95% {
+                transform: rotate(270deg);
+            }
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+        .proffession {
+            position: absolute;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .proffession h4 {
+            margin-bottom: 0;
+            font-weight: 500;
+            position: relative;
+            color: #1dfc00;
+            line-height: 1;
+        }
+
+        .proffessions i {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 2rem;
+        }
+
+        .circle {
+            height: 350px;
+            width: 350px;
+            border: 4px solid #15fa00;
+            border-radius: 50%;
+            box-decoration-break: clone;
+        }
+
+        .home-img img {
+            position: absolute;
+            bottom: 0;
+            right: -10px;
+            width: 300px;
+            height: 300px;
+            overflow: hidden;
+            pointer-events: none;
+            margin-bottom: 50px;
+            margin-right: 0px;
+        }
+    </style>
 </head>
-<style>
-    /* Resetting default styles */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-/* Main wrapper */
-.main-wrap {
-    display: flex;
-    flex-direction: column;
-    height: 100vh;
-}
-
-/* Header */
-.main-head {
-    background-color: #333;
-    color: #fff;
-    padding: 20px;
-}
-
-.title {
-    display: flex;
-    align-items: center;
-}
-
-.title h3 {
-    margin-left: 10px;
-}
-
-/* Navbar */
-.navbar {
-    display: flex;
-    flex-direction: column;
-}
-
-.nav-list {
-    list-style-type: none;
-    padding: 0;
-}
-
-.nav-list-item {
-    margin-bottom: 10px;
-}
-
-.nav-link {
-    display: flex;
-    align-items: center;
-    text-decoration: none;
-    color: #fff;
-}
-
-.link-text {
-    margin-left: 10px;
-}
-
-/* Showcase section */
-.showcase {
-    flex: 1;
-    display: flex;
-    background-color: #f4f4f4;
-}
-
-.head {
-    padding: 20px;
-}
-
-.toggle {
-    background-color: transparent;
-    border: none;
-    cursor: pointer;
-}
-
-.content {
-    flex: 1;
-    padding: 20px;
-}
-
-/* Sidebar animation */
-.showcase.active .navbar {
-    transform: translateX(0);
-}
-
-.navbar {
-    transform: translateX(-100%);
-    transition: transform 0.5s ease;
-    position: fixed;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    background-color: #333;
-    width: 200px;
-    padding: 20px;
-    z-index: 1000;
-    overflow-y: auto;
-}
-
-/* Media queries for responsiveness */
-@media screen and (max-width: 768px) {
-    .navbar {
-        width: 150px;
-    }
-}
-
-@media screen and (max-width: 576px) {
-    .navbar {
-        width: 100px;
-    }
-}
-.navbar:has(#toggle:checked) {
-    width: 60px;
-}
-
-.navbar:has(#toggle:checked) .link-text {
-    display: none;
-}
-
-.navbar:has(#toggle:checked) ~ .content {
-    margin-left: 60px;
-}
-
-</style>
 <body>
-    <main class="main-wrap">
-       <header class="main-head">
-        <div class="main-nav">
-            <nav class="navbar">
-              <div class="navbar-nav">
-                <div class="title">
-                    <h3>
-                        <i class="fa-brands fa-app-store-ios"></i>
-                        <span class="title-text">Apps</span>
-                    </h3>
+    <header>
+        <h1>Brian Paul Gitonga</h1>
+        <i class="fas fa-bars menu-icon" onclick="toggleMenu()"></i>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About me</a></li>
+                <li><a href="#">Services</a></li>
+                <li><a href="skills.html">Skills</a></li>
+                <li><a href="#">Contact me</a></li>
+            </ul>
+        </nav>
+        <div class="dropdown" id="dropdown">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About me</a></li>
+                <li><a href="#">Services</a></li>
+                <li><a href="skills.html">Skills</a></li>
+                <li><a href="#">Contact me</a></li>
+            </ul>
+        </div>
+    </header>
+    <section class="home" id="home">
+        <div class="home-content">
+            <h3>Hello, I'm </h3>
+            <h2 class="heading" style="color: #724b4b;">BrianPaul<span> Gitonga</span></h2>
+            <h3>And I'm a <span class="multiple-text"></span></h3>
+            <div class="social-media">
+                <a href="https://www.facebook.com/Prince Jeddie " target="_blank"><i class="fab fa-facebook"></i></a>
+                <a href="https://www.twitter.com/@julius29511" target="_blank"><i class="fab fa-twitter"></i></a>
+                <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
+                <a href="https://wa.me/+254704234834" target="_blank"><i class="fab fa-whatsapp"></i></a><br>
+            </div>
+            <div class="btn">
+                <a href="cv.html">Download CV</a>
+            </div>
+        </div>
+        <div class="proffessions-container::overlay">
+            <div class="proffessions-box">
+                <div class="proffession">
+                    <i style="color: #1dfc00;" class="fas fa-code"></i>
+                    <h4>Web Developer</h4>
                 </div>
-                <ul class="nav-list">
-                   <li class="nav-list-item">
-                    <a href="#" class="nav-link">
-                        <i class="fa-solid fa-house-chimney"></i>
-                        <span class="link-text">Home</span>
-                    </a>
-                   </li>
-                   <li class="nav-list-item">
-                    <a href="#" class="nav-link">
-                        <i class="fa-brands fa-app-store-ios"></i>
-                        <span class="link-text">About</span>
-                    </a>
-                   </li>
-                   <li class="nav-list-item">
-                    <a href="#" class="nav-link">
-                        <i class="fa-brands fa-servicestack"></i>
-                        <span class="link-text">Services</span>
-                    </a>
-                   </li>
-                   <li class="nav-list-item">
-                    <a href="#" class="nav-link">
-                        <i class="fa-duotone fa-phone-rotary"></i>
-                        <span class="link-text">Contact</span>
-                    </a>
-                   </li>
-                   <li class="nav-list-item">
-                    <a href="#" class="nav-link">
-                        <i class="fa-solid fa-right-to-bracket"></i>
-                        <span class="link-text">Login</span>
-                    </a>
-                   </li>
-                   <li class="nav-list-item">
-                    <a href="#" class="nav-link">
-                        <i class="fa-solid fa-user-plus"></i>
-                        <span class="link-text">signup</span>
-                    </a>
-                   </li>
-                   <li class="nav-list-item">
-                    <a href="#" class="nav-link">
-                        <i class="fa-solid fa-kitchen-set"></i>
-                        <span class="link-text">skills</span>
-                    </a>
-                   </li>
-                   <li class="nav-list-item">
-                    <a href="#" class="nav-link">
-                        <i class="fa-regular fa-diploma"></i>
-                        <span class="link-text">education</span>
-                    </a>
-                   </li>
-                   <li class="nav-list-item">
-                    <a href="#" class="nav-link">
-                        <i class="fa-solid fa-share"></i>
-                        <span class="link-text">Services</span>
-                    </a>
-                   </li>
-                   <li class="nav-list-item">
-                    <a href="#" class="nav-link">
-                        <i class="fa-solid fa-user"></i>
-                        <span class="link-text">Portifolio</span>
-                    </a>
-                   </li>
-                   <li class="nav-list-item">
-                    <a href="#" class="nav-link">
-                        <i class="fa-duotone fa-blog"></i>
-                        <span class="link-text">Blog</span>
-                    </a>
-                   </li>
-                </ul>
-              </div>  
-            </nav>
-        </div>
-       </header>
-       <section class="showcase">
-        <div class="head">
-            <input type="checkbox" id="toggle" class="toggle">
-            <label for="toggle">
-                <i class="fa-solid fa-bars-staggered"></i>
-            </label>
-        </div>
-        <div class="content">
-            <div class="welcome">
-                <div class="content-text">
-                    <h1>
-                        <span class="title-text">Welcome</span>
-                    </h1>
-                    <p>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem, quaerat.
-                    </p>
+                <div class="proffession">
+                    <i style="color: #1dfc00;" class="fas fa-laptop-code"></i>
+                    <h4>Programmer</h4>
+                </div>
+                <div class="proffession">
+                    <i style="color: #1dfc00;" class="fas fa-palette"></i>
+                    <h4>Graphic Designer</h4>
+                </div>
+                <div class="proffession">
+                    <i style="color: #1dfc00;" class="fas fa-camera"></i>
+                    <h4>Photographer</h4>
+                </div>
+                <div class="circle"></div>
+            </div>
+            <div class="overlay">
+                <div class="home-img">
+                    <img src="olio.png.png" alt="Profile Picture">
                 </div>
             </div>
         </div>
-       </section> 
-    </main>
-
-
-   <script >
-document.addEventListener("DOMContentLoaded", function() {
-    const toggleButton = document.querySelector('.toggle');
-    const navbar = document.querySelector('.navbar');
-
-    toggleButton.addEventListener('click', function() {
-        console.log('Toggle button clicked');
-        navbar.classList.toggle('active');
-    });
-});
-
-   </script> 
+    </section>
+    <script>
+        function toggleMenu() {
+            const dropdown = document.getElementById('dropdown');
+            dropdown.classList.toggle('show');
+        }
+    </script>
 </body>
 </html>

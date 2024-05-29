@@ -42,7 +42,7 @@
 
         h1 {
             margin: 0;
-            font-size: 24px;
+            font-size: 20px;
             font-family: 'Times New Roman', Times, serif;
         }
 
@@ -143,8 +143,103 @@
             .dropdown.show {
                 display: flex;
             }
+
+
+    .home-content h3 {
+        font-size: 1.8rem;
+    }
+
+    .home-content p {
+        font-size: 1.1rem;
+    }
+
+    .social-media a {
+        width: 1.8rem;
+        height: 1.8rem;
+        font-size: 1.2rem;
+    }
+
+    .proffessions-box {
+        margin-right: 30px;
+    }
+
+    .circle {
+        height: 300px;
+        width: 300px;
+    }
+
+    .home-img img {
+        width: 300px;
+        height: 300px;
+        margin-bottom: 100px;
+    }
+            
         }
 
+        @media (max-width: 480px) {
+    header {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 10px;
+    }
+
+    .profile {
+        width: 40px;
+        height: 40px;
+        margin-right: 0;
+        margin-bottom: 10px;
+    }
+
+    h1 {
+        font-size: 18px;
+    }
+
+    .home {
+        flex-direction: column-reverse;
+        align-items: center;
+        padding: 10px;
+    }
+
+    .home-content {
+        text-align: center;
+        padding: 10px;
+    }
+
+    .home-content h3 {
+        font-size: 1.6rem;
+    }
+
+    .home-content p {
+        font-size: 1rem;
+    }
+
+    .social-media a {
+        width: 1.5rem;
+        height: 1.5rem;
+        font-size: 1rem;
+    }
+
+    .btn {
+        width: 80px;
+        height: 16px;
+        font-size: 12px;
+    }
+
+    .proffessions-box {
+        margin-right: 0;
+    }
+
+    .circle {
+        height: 250px;
+        width: 250px;
+    }
+
+    .home-img img {
+        width: 250px;
+        height: 250px;
+        margin-bottom: 50px;
+    }
+}
         p {
             color: white;
             text-align: left;

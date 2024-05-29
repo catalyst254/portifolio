@@ -5,55 +5,92 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Sidebar Navigation</title>
   <link rel="stylesheet" href="styles.css">
-</head>
-<style>
+  <style>
     /* Resetting default margin and padding */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-body {
-  font-family: Arial, sans-serif;
-}
+    body {
+      font-family: Arial, sans-serif;
+    }
 
-.sidebar {
-  width: 200px;
-  height: 100%;
-  background-color: #8c00ff;
-  color: white;
-  position: fixed;
-  left: 0;
-  top: 0;
-}
+    .sidebar {
+      width: 200px;
+      height: 100%;
+      background-color: #88ff00;
+      color: white;
+      position: fixed;
+      left: 0;
+      top: 0;
+      transition: transform 0.3s ease-in-out;
+    }
 
-.sidebar ul {
-  list-style-type: none;
-  padding: 20px 0;
-}
+    .sidebar ul {
+      list-style-type: none;
+      padding: 20px 0;
+    }
 
-.sidebar ul li {
-  padding: 10px 20px;
-}
+    .sidebar ul li {
+      padding: 10px 20px;
+    }
 
-.sidebar ul li a {
-  color: white;
-  text-decoration: none;
-  display: block;
-}
+    .sidebar ul li a {
+      color: white;
+      text-decoration: none;
+      display: block;
+    }
 
-.sidebar ul li a:hover {
-  background-color: #000000;
-}
+    .sidebar ul li a:hover {
+      background-color: #000000;
+    }
 
-.content {
-  margin-left: 200px; /* Adjust this value to match the width of your sidebar */
-  padding: 20px;
-}
+    .content {
+      margin-left: 200px;
+      padding: 20px;
+      transition: margin-left 0.3s ease-in-out;
+    }
 
-</style>
+    .sidebar-toggle {
+      display: none;
+    }
+
+    @media (max-width: 768px) {
+      .sidebar {
+        transform: translateX(-100%);
+      }
+
+      .content {
+        margin-left: 0;
+      }
+
+      .sidebar-toggle {
+        display: block;
+        position: fixed;
+        top: 20px;
+        left: 20px;
+        background-color: #ff0037;
+        color: white;
+        padding: 10px;
+        border: none;
+        cursor: pointer;
+        margin-left: 400px;
+      }
+
+      .sidebar-open .sidebar {
+        transform: translateX(0);
+      }
+
+      .sidebar-open .content {
+        margin-left: 200px;
+      }
+    }
+  </style>
+</head>
 <body>
+  <button class="sidebar-toggle" onclick="toggleSidebar()">☰</button>
   <div class="sidebar">
     <ul>
       <li><a href="#">Home</a></li>
@@ -66,6 +103,14 @@ body {
   </div>
   <div class="content">
     <!-- Your main content goes here -->
+    <h1>Welcome to Our Website</h1>
+    <p>This is the main content area. Resize the browser window to see the responsive effect.</p>
   </div>
+
+  <script>
+    function toggleSidebar() {
+      document.body.classList.toggle('sidebar-open');
+    }
+  </script>
 </body>
 </html>
