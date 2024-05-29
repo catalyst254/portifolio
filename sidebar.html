@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Side Navigation menu</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+<style>
+    /* Resetting default styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Main wrapper */
+.main-wrap {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
+/* Header */
+.main-head {
+    background-color: #333;
+    color: #fff;
+    padding: 20px;
+}
+
+.title {
+    display: flex;
+    align-items: center;
+}
+
+.title h3 {
+    margin-left: 10px;
+}
+
+/* Navbar */
+.navbar {
+    display: flex;
+    flex-direction: column;
+}
+
+.nav-list {
+    list-style-type: none;
+    padding: 0;
+}
+
+.nav-list-item {
+    margin-bottom: 10px;
+}
+
+.nav-link {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: #fff;
+}
+
+.link-text {
+    margin-left: 10px;
+}
+
+/* Showcase section */
+.showcase {
+    flex: 1;
+    display: flex;
+    background-color: #f4f4f4;
+}
+
+.head {
+    padding: 20px;
+}
+
+.toggle {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+.content {
+    flex: 1;
+    padding: 20px;
+}
+
+/* Sidebar animation */
+.showcase.active .navbar {
+    transform: translateX(0);
+}
+
+.navbar {
+    transform: translateX(-100%);
+    transition: transform 0.5s ease;
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    background-color: #333;
+    width: 200px;
+    padding: 20px;
+    z-index: 1000;
+    overflow-y: auto;
+}
+
+/* Media queries for responsiveness */
+@media screen and (max-width: 768px) {
+    .navbar {
+        width: 150px;
+    }
+}
+
+@media screen and (max-width: 576px) {
+    .navbar {
+        width: 100px;
+    }
+}
+.navbar:has(#toggle:checked) {
+    width: 60px;
+}
+
+.navbar:has(#toggle:checked) .link-text {
+    display: none;
+}
+
+.navbar:has(#toggle:checked) ~ .content {
+    margin-left: 60px;
+}
+
+</style>
+<body>
+    <main class="main-wrap">
+       <header class="main-head">
+        <div class="main-nav">
+            <nav class="navbar">
+              <div class="navbar-nav">
+                <div class="title">
+                    <h3>
+                        <i class="fa-brands fa-app-store-ios"></i>
+                        <span class="title-text">Apps</span>
+                    </h3>
+                </div>
+                <ul class="nav-list">
+                   <li class="nav-list-item">
+                    <a href="#" class="nav-link">
+                        <i class="fa-solid fa-house-chimney"></i>
+                        <span class="link-text">Home</span>
+                    </a>
+                   </li>
+                   <li class="nav-list-item">
+                    <a href="#" class="nav-link">
+                        <i class="fa-brands fa-app-store-ios"></i>
+                        <span class="link-text">About</span>
+                    </a>
+                   </li>
+                   <li class="nav-list-item">
+                    <a href="#" class="nav-link">
+                        <i class="fa-brands fa-servicestack"></i>
+                        <span class="link-text">Services</span>
+                    </a>
+                   </li>
+                   <li class="nav-list-item">
+                    <a href="#" class="nav-link">
+                        <i class="fa-duotone fa-phone-rotary"></i>
+                        <span class="link-text">Contact</span>
+                    </a>
+                   </li>
+                   <li class="nav-list-item">
+                    <a href="#" class="nav-link">
+                        <i class="fa-solid fa-right-to-bracket"></i>
+                        <span class="link-text">Login</span>
+                    </a>
+                   </li>
+                   <li class="nav-list-item">
+                    <a href="#" class="nav-link">
+                        <i class="fa-solid fa-user-plus"></i>
+                        <span class="link-text">signup</span>
+                    </a>
+                   </li>
+                   <li class="nav-list-item">
+                    <a href="#" class="nav-link">
+                        <i class="fa-solid fa-kitchen-set"></i>
+                        <span class="link-text">skills</span>
+                    </a>
+                   </li>
+                   <li class="nav-list-item">
+                    <a href="#" class="nav-link">
+                        <i class="fa-regular fa-diploma"></i>
+                        <span class="link-text">education</span>
+                    </a>
+                   </li>
+                   <li class="nav-list-item">
+                    <a href="#" class="nav-link">
+                        <i class="fa-solid fa-share"></i>
+                        <span class="link-text">Services</span>
+                    </a>
+                   </li>
+                   <li class="nav-list-item">
+                    <a href="#" class="nav-link">
+                        <i class="fa-solid fa-user"></i>
+                        <span class="link-text">Portifolio</span>
+                    </a>
+                   </li>
+                   <li class="nav-list-item">
+                    <a href="#" class="nav-link">
+                        <i class="fa-duotone fa-blog"></i>
+                        <span class="link-text">Blog</span>
+                    </a>
+                   </li>
+                </ul>
+              </div>  
+            </nav>
+        </div>
+       </header>
+       <section class="showcase">
+        <div class="head">
+            <input type="checkbox" id="toggle" class="toggle">
+            <label for="toggle">
+                <i class="fa-solid fa-bars-staggered"></i>
+            </label>
+        </div>
+        <div class="content">
+            <div class="welcome">
+                <div class="content-text">
+                    <h1>
+                        <span class="title-text">Welcome</span>
+                    </h1>
+                    <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem, quaerat.
+                    </p>
+                </div>
+            </div>
+        </div>
+       </section> 
+    </main>
+
+
+   <script >
+document.addEventListener("DOMContentLoaded", function() {
+    const toggleButton = document.querySelector('.toggle');
+    const navbar = document.querySelector('.navbar');
+
+    toggleButton.addEventListener('click', function() {
+        console.log('Toggle button clicked');
+        navbar.classList.toggle('active');
+    });
+});
+
+   </script> 
+</body>
+</html>

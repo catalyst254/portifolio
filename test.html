@@ -1,236 +1,71 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About me - Brianpaul Gitonga</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-    <style>
-        body {
-            margin: 0;
-            padding: 0;
-            background-color: black;
-            color: #ffffff;
-            font-family: 'Arial', sans-serif;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            height: auto;
-        }
-        
-        header {
-            background-color: #15fa00;
-            color: white;
-            font-family: 'Times New Roman', Times, serif;
-            font-weight: bold;
-            padding: 20px;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            z-index: 9999;
-            position: fixed;
-            top: 0;
-            width: 100%;
-        }
-
-        .profile {
-            border-radius: 50%;
-            width: 60px;
-            height: 60px;
-            margin-right: 10px;
-        }
-
-        h1 {
-            margin: 0;
-            text-align: center;
-            font-size: 24px;
-            font-family: 'Times New Roman', Times, serif;
-        }
-
-        nav {
-            padding: 10px;
-            text-align: left;
-        }
-
-        nav ul {
-            list-style-type: none;
-            margin: 0;
-            padding: 0;
-        }
-
-        nav ul li {
-            display: inline;
-            margin-right: 10px;
-            position: relative;
-        }
-
-        nav ul li a {
-            color: white;
-            text-decoration: none;
-            position: relative;
-        }
-
-        nav ul li a::after {
-            content: '';
-            position: absolute;
-            width: 100%;
-            height: 2px;
-            bottom: -5px;
-            left: 0;
-            background-color: transparent;
-            transition: background-color 0.3s ease;
-        }
-
-        nav ul li a:hover::after {
-            background-color: #080e03;
-        }
-        
-        .container {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 20px;
-            padding: 20px;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .card {
-            background-color: transparent;
-            border-radius: 10px;
-            padding: 20px;
-            box-shadow: 5px 5px 5px 5px rgb(253, 0, 0);
-            opacity: 0;
-            animation: bounce-in 2s ease-in-out forwards;
-        }
-
-        @keyframes bounce-in {
-            0% {
-                opacity: 0;
-                transform: translateX(-50px);
-            }
-            50% {
-                opacity: 0.5;
-                transform: translateX(20px);
-            }
-            100% {
-                opacity: 1;
-                transform: translateX(0);
-            }
-        }
-
-        .card:hover {
-            transform: translateY(-5px);
-        }
-
-        .card h3 {
-            color: #15fa00;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            text-decoration: underline;
-            font-style: italic;
-        }
-
-        .card p {
-            color: #ffffff;
-            font-family: Georgia, 'Times New Roman', Times, serif;
-        }
-
-        .social-media {
-            text-align: center;
-        }
-
-        .social-media a {
-            display: inline-flex;
-            text-decoration: none;
-            align-items: center;
-            justify-content: center;
-            width: 2rem;
-            height: 2rem;
-            background-color: transparent;
-            border-radius: 50%;
-            box-shadow: 5px 5px 5px black;
-            margin: 0.5rem 0.5rem 1rem 2;
-            font-size: 1.5rem;
-            color: rgb(78, 247, 0);
-        }
-
-        .social-media a:hover {
-            box-shadow: 5px 5px 5px #f9f9ff;
-            transition: 0.5s ease;
-            background-color: #32fc00;
-            color: white;
-        }
-
-        .me {
-            width: 150px;
-            height: 150px;
-            font-size: 1.8rem;
-            text-align: center;
-            max-width: 0 auto;
-            border: 2px solid #15fa00;
-            border-radius: 50%;
-        }
-
-        .me img {
-            width: 100%;
-            height: 100%;
-            border-radius: 50%;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sidebar Navigation</title>
+  <link rel="stylesheet" href="styles.css">
 </head>
+<style>
+    /* Resetting default margin and padding */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+}
+
+.sidebar {
+  width: 200px;
+  height: 100%;
+  background-color: #8c00ff;
+  color: white;
+  position: fixed;
+  left: 0;
+  top: 0;
+}
+
+.sidebar ul {
+  list-style-type: none;
+  padding: 20px 0;
+}
+
+.sidebar ul li {
+  padding: 10px 20px;
+}
+
+.sidebar ul li a {
+  color: white;
+  text-decoration: none;
+  display: block;
+}
+
+.sidebar ul li a:hover {
+  background-color: #000000;
+}
+
+.content {
+  margin-left: 200px; /* Adjust this value to match the width of your sidebar */
+  padding: 20px;
+}
+
+</style>
 <body>
-<header>
-    <img class="profile" src="profile.png.jpg" alt="Profile Picture">
-    <h1>BriGiSoftech</h1>
-    <nav>
-        <ul>
-            <li><a href="page.html">Home</a></li>
-            <li><a href="about.html">About</a></li>
-            <li><a href="#">Services</a></li>
-            <li><a href="education.html">Education</a></li>
-            <li><a href="skills.html">Skills</a></li>
-            <li><a href="#">Portfolio</a></li>
-            <li><a href="#">Contact</a></li>
-        </ul>
-    </nav>
-</header>
-<div style="display: flex; align-items: center; margin-top: 500px;">
-    <h1 style="margin-right: 10px;">About</h1>
-    <h1 style="color: #15fa00;">Me</h1>
-</div>
-<div class="me">
-    <img src="pu.png">
-</div>
-<p>Hi, <strong>I'm BrianPaul Gitonga.</strong> <br> <h3 style="font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; font-style: oblique;">Welcome to my corner of the internet! I'm grateful to have you here 🙏</h3></p>
-<p>Let me introduce myself:</p>
-<div class="container">
-    <div class="card">
-        <h3>Who Am I?</h3>
-        <p>I'm Brian Paul Gitonga, a passionate individual with a diverse set of skills and interests.</p>
-    </div>
-    <div class="card">
-        <h3>My Journey</h3>
-        <p>My journey began [] years ago when I first delved into the world of programming and design. Since then, I've been on a continuous path of learning and growth, honing my skills and exploring new opportunities.</p>
-    </div>
-    <div class="card">
-        <h3>What I Do</h3>
-        <p>I specialize in web development, programming, graphic design, and photography. I'm deeply committed to delivering high-quality work that meets the needs of my clients and exceeds their expectations.</p>
-    </div>
-    <div class="card">
-        <h3>Why I Do It</h3>
-        <p>What drives me in my work is the opportunity to bring ideas to life and make a meaningful impact. I believe in the power of creativity and technology to transform businesses and enhance experiences.</p>
-    </div>
-    <div class="card">
-        <h3>Let's Connect!</h3>
-        <p>I'm always open to new opportunities, collaborations, or just a friendly chat. Feel free to reach out to me via email at <a href="mailto:munyuaanthony6@gmail.com?subject=Feedback%20Request&body=Hello%20there,"><button >Send Email</button> </a>
-            or connect with me on social media.</p>
-        <div class="social-media">
-            <a href="https://www.facebook.com/TonieMchokozi " target="_blank"><i class="fab fa-facebook"></i> </a>
-            <a href="https://www.twitter.com/@julius29511" target="_blank"><i class="fab fa-twitter"></i> </a>
-            <a href="#" target="_blank"><i class="fab fa-instagram"></i> </a>
-            <a href="https://wa.me/+254110848885" target="_blank"><i class="fab fa-whatsapp"></i> </a><br>
-        </div>
-    </div>
-</div>
+  <div class="sidebar">
+    <ul>
+      <li><a href="#">Home</a></li>
+      <li><a href="#">About Us</a></li>
+      <li><a href="#">Contact Us</a></li>
+      <li><a href="#">Our Services</a></li>
+      <li><a href="#">Login</a></li>
+      <li><a href="#">Sign Up</a></li>
+    </ul>
+  </div>
+  <div class="content">
+    <!-- Your main content goes here -->
+  </div>
 </body>
 </html>
